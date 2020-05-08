@@ -17,6 +17,7 @@ dbook({
     profile : 'xxxxxxxxxxxxx'
 })
 .mainLine()  //可忽略
+.L('读取输入 [name][pwd]')
 .do('用户密码基础校验' , d().test({
     name : '!!&?string&>0',
     pwd : j('!!&?string&>7').$(d().test(data=>{  //do something
@@ -24,16 +25,17 @@ dbook({
     }))
 }, 'xxxxxxxx'))
 .if(d('success').test('=false'))
-.do('提示登陆失败')
-.return()
+.L('<提示>登陆失败')
+.exit()
 .endif()
-.do('调用登陆接口' , d().rsc('login', { name : d().find('name').first() }))
+.do('<调用>登陆接口' , d().rsc('login', { name : d().find('name').first() }))
 .if(d('success').test('=false'))
 .do('提示用户密码错误')
-.return()
+.exit()
 .endif()
-.do('调转到具体页面', ()=>{ 
+.do('跳转到具体页面', ()=>{ 
     // do someting
 })
+.end()
 
 ```
