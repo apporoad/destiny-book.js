@@ -1,0 +1,59 @@
+<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+<div id="container"></div>
+
+
+<script type="text/babel">
+    var divCss = {
+        "text-align" : 'center', 'border-radius': '20px', width:'600px', margin: 'auto', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0
+    }
+    var nameCss = {color:'darkmagenta' , 'font-size': 'large', 'margin-left': 20}
+    var dateCss = {color: 'blue', 'font-size':'small' , 'margin-left': 20}
+
+    var array = [
+        { name: 'a1', date : Date.now()},
+        { name: 'a2', date : Date.now()},
+        { name: 'a3', date : Date.now()},
+        { name: 'a4', date : Date.now()},
+        { name: 'a5', date : Date.now()},
+        { name: 'a6', date : Date.now()},
+        { name: 'a7', date : Date.now()},
+        { name: 'a8', date : Date.now()},
+        { name: 'a9', date : Date.now()},
+        { name: 'a10', date : Date.now()},
+    ]
+
+    function PS(props){
+        
+    }
+
+    class Rank extends React.Component {
+        constructor(props) {
+            super(props);
+            // this.state = {
+            //     msg: 'hello'
+            // }
+        }
+        render () {
+            var list = this.props.array.map((one, index)=>{
+                var topCss = { 'font-size' : (25 )+'px', color: 'darkorange' }
+                return (
+                <p>
+                    <b style={topCss}>Top {index + 1}</b>
+                    <b style={nameCss}>{one.name}</b>
+                    <span style={dateCss}>[{ new Date(one.date).toLocaleString()}]</span>  
+                </p>
+                )
+            })
+            return <div style={divCss}>{list}</div>
+        }
+    }
+
+    ReactDOM.render(
+        <Rank array={array}></Rank>,
+        document.getElementById('container')
+    )
+
+</script>
