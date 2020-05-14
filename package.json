@@ -1,0 +1,34 @@
+{
+  "name": "destiny-book.js",
+  "version": "1.0.0",
+  "description": "awesome book ",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apporoad/destiny-book.js.git"
+  },
+  "keywords": [
+    "tell",
+    "stories"
+  ],
+  "author": "apporoad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apporoad/destiny-book.js/issues"
+  },
+  "homepage": "https://github.com/apporoad/destiny-book.js#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "dson.js": "^1.0.3",
+    "lisa.utils": "^2.1.0",
+    "marry.js": "^1.0.0"
+  }
+}
